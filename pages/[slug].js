@@ -1,8 +1,13 @@
-import { fetchContent } from "../services/contentful-client"
+import { fetchContent, fetchPaths } from "../services/contentful-client"
 import Section from "../components/base/Section"
 
-export async function getStaticProps() {
-  const res = await fetchContent({ slug: process.env.CONTENTFUL_START_PAGE_SLUG })
+export async function getStaticPaths() {
+  const res = await fetchPaths()
+  return res
+}
+
+export async function getStaticProps({ params }) {
+  const res = await fetchContent({ slug: params.slug })
   return {
     props: {
       res,
