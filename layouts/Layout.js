@@ -7,7 +7,7 @@ export default function Layout({ children }) {
         <Link href="/">
           <a>
             <h1>
-              <span>Glen's Chickens</span>
+              <span>POC / modern next.js app</span>
             </h1>
             <h2>Spread The Joy</h2>
           </a>
@@ -19,7 +19,7 @@ export default function Layout({ children }) {
       </div>
 
       <footer>
-        <p>Copyright 2022 Glen's Chickens</p>
+        <p>Copyright 2022 POC</p>
       </footer>
     </div>
   )
