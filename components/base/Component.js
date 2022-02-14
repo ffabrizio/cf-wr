@@ -1,10 +1,12 @@
 import React from "react";
 import Editorial from "../Editorial"
 import RichText from "../RichText"
+import Test from "../Test"
 
 const map = {
   editorial: Editorial,
-  richText: RichText
+  richText: RichText,
+  test: Test
 }
 
 export default function Component({ data, type }) {
