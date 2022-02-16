@@ -6,10 +6,10 @@ const client = createClient({
 })
 
 export async function fetchContent(params) {
-  console.log(params)
+  const slug = params.slug.join('/')
   const {items} = await client.getEntries({
     content_type: "page",
-    "fields.slug": params.slug,
+    "fields.slug": slug,
     include: 5
   })
   return {
@@ -17,13 +17,13 @@ export async function fetchContent(params) {
   }
 }
 
-export async function fetchPaths() {
+export async function fetchPaths(dynamic = false) {
   const {items} = await client.getEntries({
     content_type: "page"
   })
   const paths = items.map(item => {
     return {
-      params: { slug: item.fields.slug }
+      params: { slug: dynamic ? item.fields.slug.split('/') : item.fields.slug }
     }
   })
 

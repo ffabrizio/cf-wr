@@ -1,5 +1,5 @@
-import { fetchContent, fetchPaths } from "../services/contentful-client"
-import Section from "../components/base/Section"
+import { fetchContent, fetchPaths } from "../../services/contentful-client"
+import Section from "../../components/base/Section"
 
 export async function getStaticPaths() {
   const res = await fetchPaths()
