@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "./Base/Image"
 import Cta from "./Cta"
 
 export default function Editorial({ data }) {
